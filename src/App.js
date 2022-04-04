@@ -10,22 +10,22 @@ export const StyledButton = styled.button`
   padding: 10px;
   border-radius: 50px;
   border: none;
-  background-color: #000000;
+  background-color: #8A8D8F;
   padding: 10px;
   font-weight: bold;
   color: #000000;
   width: 300px;
   cursor: pointer;
-  box-shadow: 2px 8px 4px -2px rgba(250, 250, 0, 0.5);
+  box-shadow: 2px 8px 4px -2px rgba(0, 48, 135, 0.5);
   -webkit-box-shadow: 2px 3px 10px -2px rgba(250, 250, 0, 0.5);
-  -moz-box-shadow: 2px 8px 4px -2px rgba(250, 250, 0, 0.5);
+  -moz-box-shadow: 2px 8px 4px -2px rgba(0, 48, 135, 0.5);
   :active {
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
   }
   :hover {
-    -webkit-box-shadow: 2px 3px 40px -2px rgba(250, 250, 0, 0.9);
+    -webkit-box-shadow: 2px 3px 40px -2px rgba(0, 48, 135, 0.9);
   }
 `;
 
@@ -56,7 +56,7 @@ function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
-  const [feedback, setFeedback] = useState("What Personality will your Bone Face Deadies have?");
+  const [feedback, setFeedback] = useState("");
   const [claimingNft, setClaimingNft] = useState(false);
 
   const claimNFTs = (_amount) => {
@@ -71,7 +71,7 @@ function App() {
         gasLimit: "285000",
         to: "0xBdcb0e2ae2f3FE1bc0E9A853cDb988d7d90c5e18",
         from: blockchain.account,
-        value: blockchain.web3.utils.toWei((.02 * _amount).toString(), "ether"),
+        value: blockchain.web3.utils.toWei((.05 * _amount).toString(), "ether"),
       })
       .once("error", (err) => {
         console.log(err);
@@ -201,11 +201,11 @@ function App() {
         <s.SpacerSmall />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
           <s.TextDescription style={{ textAlign: "center", fontSize: 18 }}>
-            30% of monthly revenue goes towards a crypto communities coin or token and 10% is given away monthly to select holders
+            
           </s.TextDescription>
           <s.SpacerSmall />
           <s.TextDescription style={{ textAlign: "center", fontSize: 14 }}>
-            Bone Face Deadies NFT supports crypto communities through giveaways and burn<p/>*.*.*Launching_Soon*.*.*
+            
           </s.TextDescription>
         </s.Container>
       </s.Container>
